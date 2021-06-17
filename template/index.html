@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Acesso remoto</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar: -->
+    <aside class="sidebar pos-absolute z-2" data-role="sidebar" data-toggle="#sidebar-toggle-3" id="sb3"
+        data-shift=".shifted-content">
+        <ul class="sidebar-menu bg-gray">
+            <li id="home"><a><span class="mif-squirrel icon"></span>Home</a></li>
+            <li id="clientes"><a><span class="mif-organization icon"></span>Clientes</a></li>
+            <li id="comandos"><a><span class="mif-embed2 icon"></span>Execução</a></li>
+        </ul>
+    </aside>
+
+    <div class="shifted-content h-100 p-ab">
+        <div class="app-bar pos-absolute bg-black z-1" data-role="appbar">
+            <button class="app-bar-item c-pointer" id="sidebar-toggle-3">
+                <span class="mif-menu fg-white"></span>
+            </button>
+        </div>
+        <!-- Visualização da Home: -->
+        <div id="Home_view" class="h-100 p-4 text-center">
+            <p class="h1">Inicialize o servidor para receber as conexões.</p>
+            <button class="shortcut secondary outline" id="start_server">
+                <span class="caption">Inicializar</span>
+                <span class="mif-rocket icon"></span>
+            </button>
+            <p class="h3 bg-green fg-white" id="status_server" style="display:none;">Servidor iniciado</p>
+        </div>
+
+        <!-- Visualização dos clientes: -->
+        <div id="Clients_view" class="h-100 p-4 text-center" style="display:none;">
+            <p class="h1">Clientes conectados</p>
+            <table class="table row-hover">
+                <thead>
+                    <tr>
+                        <th>Clientes</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="cli-list"></tbody>
+            </table>
+        </div>
+
+        <!-- Execução de comandos: -->
+        <div id="Command_view" class="h-100 p-4 text-center" style="display:none;">
+            <p class="h3">Execute comando no cliente selecionado.</p>
+            <p>Digite o comando:</p>
+            <input id="command_input" type="text" class="w-50 d-inline">
+            <button id="send_command"class="button success outline d-inline">Enviar</button>
+            <p>Output:</p>
+            <textarea id="output_command"data-role="textarea" data-clear-button="false"
+            data-cls-textarea="bg-dark fg-green" ></textarea>
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    <script src="function_server.js"></script>
+
+</body>
+
+</html>

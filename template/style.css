@@ -1,0 +1,8 @@
+body{
+    background-color:white;
+}
+
+#output_command {
+    height: 300px;
+    overflow-y: scroll;
+}
